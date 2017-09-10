@@ -5,6 +5,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import {ProductComponent} from './products/product.componant';
+import {FilterPipe} from './products/filter.pipe';
 
 @NgModule({
   imports:      [
@@ -13,6 +14,7 @@ import {ProductComponent} from './products/product.componant';
       ReactiveFormsModule,
   ],
   declarations: [
+      FilterPipe,
       AppComponent,
       ProductComponent,
   ],

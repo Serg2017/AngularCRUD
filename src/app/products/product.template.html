@@ -1,5 +1,9 @@
 <button class="button indent" (click)="showAddProductForm()">Add New Product</button>
 
+<form class="form indent">
+    <input type="text" class="form__input" name="tern" [(ngModel)]="tern" placeholder="Search By Name" >
+</form>
+
 <form class="form indent" *ngIf="productForm">
     <label class="form__label">Id<br>
         <input type="text" name="id" class="form__input" [(ngModel)]="newProduct.id" >
@@ -26,7 +30,7 @@
         <td class="product__title">Price</td>
         <td class="product__title"></td>
     </tr>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of products | filter: tern">
         <td class="product__item">{{ product.id }}</td>
         <td class="product__item">{{ product.name }}</td>
         <td class="product__item">{{ product.description }}</td>
